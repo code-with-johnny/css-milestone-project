@@ -26,4 +26,21 @@ You can have more than one css file and import them into the `index.css` if you 
 
 ## Example
 
+GIFs are too large to be stored in this repo. You can [click here](https://www.youtube.com/watch?v=wZq3-ctYdz8) to see an example of what the project should look like.
+
 ## Solution
+
+If you're having trouble completing this project or you want to compare your solution to the example above then you can view the solution.
+
+You'll need to use git and switch to a branch named `solution`.
+
+```
+git fetch --all
+git checkout solution
+```
+
+Once you do that, your code editor should update and you can view the `styles` directory and udpated `index.html` file.
+
+Please only do this if you've given it your best shot, otherwise you're only cheating yourself.
+
+Keep in mind that there are many ways to achieve such a solution. My way is definitely not the best, and no one's way is ever really the best. A lot of a solution comes down to personal preference and style as well as finding what works.
