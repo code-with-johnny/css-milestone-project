@@ -27,7 +27,7 @@ You can have more than one css file and import them into the `index.css` if you 
 
 ## Example
 
-GIFs are too large to be stored in this repo. You can [click here](todo) to see an example of what the project should look like.
+GIFs are too large to be stored in this repo. You can [click here](https://www.youtube.com/watch?v=mbZFXCvkkBg&ab_channel=CodeWithJohnnyp) to see an example of what the project should look like.
 
 ## Solution
 
