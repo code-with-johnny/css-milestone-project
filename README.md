@@ -18,16 +18,16 @@ You can have more than one css file and import them into the `index.css` if you 
 
 ## Requirements
 
-1. The styling that you'll see in the example gifs below is achieved using <em>only</em> css (no preprocessors or JavaScript).
+1. The styling that you'll see in the example video below is achieved using <em>only</em> css (no preprocessors or JavaScript).
 2. You should import an external font of your choosing (check out the google font API). The font used in the example video is Montserrat.
-3. The image of Joseph The Cat in the Home section should be animated onto the page on initial page load. You can use any animation you'd like (see examples section for an example).
+3. The image of Joseph The Cat should be animated onto the page on initial page load. You can use any animation you'd like (see examples section for an example).
 4. The site should be fully responsive, meaning that when you grow and shrink your browser window, the app should still look good and nothing should run off the page horizontally (except for the cat comparison table, but that's intended).
 5. The colors used are entirely up to you, but feel free to copy the palette I chose.
 6. The app should support both a light and dark theme, based on the users system preferences.
 
 ## Example
 
-GIFs are too large to be stored in this repo. You can [click here](https://www.youtube.com/watch?v=mbZFXCvkkBg&ab_channel=CodeWithJohnnyp) to see an example of what the project should look like.
+GIFs are too large to be stored in this repo. You can [click here](https://www.youtube.com/watch?v=mbZFXCvkkBg&ab_channel=CodeWithJohnny) to see an example of what the project should look like.
 
 ## Solution
 
