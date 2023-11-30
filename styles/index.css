@@ -20,7 +20,9 @@
 }
 
 body {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
   width: Max(100vw, 320px);
   margin: 0;
 }
@@ -29,7 +31,12 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-grow: 1;
   width: 100%;
+}
+
+section {
+  width: inherit;
 }
 
 a {
@@ -46,14 +53,12 @@ p {
   line-height: 1.5;
 }
 
-input,
-textarea {
+input {
   font-size: 1.25rem;
   background: white;
 }
 
 input,
-textarea,
 button {
   border: none;
   padding: 0 1rem;
@@ -81,6 +86,18 @@ button {
   align-items: center;
   justify-content: space-between;
   width: Min(100%, var(--max-width));
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  & img {
+    width: 70px;
+    border-radius: calc(var(--border-radius) / 2);
+    border: 1px solid var(--dark-gray);
+  }
 }
 
 .header__nav {
@@ -114,9 +131,6 @@ button {
   justify-content: center;
   align-items: center;
   width: inherit;
-  min-height: calc(
-    100vh - var(--total-nav-height) - var(--section-header-height)
-  );
   background: linear-gradient(to right, var(--blue) 30%, var(--green));
 }
 
@@ -398,7 +412,8 @@ button {
     height: fit-content;
   }
 
-  .header__content-wrapper {
+  .header__content-wrapper,
+  .header__brand {
     flex-direction: column;
   }
 }
@@ -409,20 +424,15 @@ button {
     background: var(--dark-gray);
   }
 
-  .contact__form {
-    & input,
-    textarea {
-      border: 1px solid whitesmoke;
-      background: var(--dark-gray);
-      &::placeholder {
-        opacity: 1;
-      }
-    }
-  }
-
   .header,
   .section-header {
     background: var(--dark-black);
+  }
+
+  .header__brand {
+    & img {
+      border: 1px solid whitesmoke;
+    }
   }
 
   .cta__copywrite-and-form {
@@ -450,6 +460,17 @@ button {
 
     & tbody tr:nth-child(odd) {
       background-color: var(--dark-gray);
+    }
+  }
+
+  .contact__form {
+    & input,
+    textarea {
+      border: 1px solid whitesmoke;
+      background: var(--dark-gray);
+      &::placeholder {
+        opacity: 1;
+      }
     }
   }
 
