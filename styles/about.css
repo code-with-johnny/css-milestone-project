@@ -1,0 +1,121 @@
+.about {
+  width: inherit;
+  display: grid;
+  place-items: center;
+}
+
+.about__content {
+  display: grid;
+  place-items: center;
+  padding: 2rem 0;
+  width: Min(100%, var(--content-max-width));
+
+  & p {
+    text-align: justify;
+    padding: 0 1rem;
+  }
+}
+
+.about__table-wrapper {
+  display: grid;
+  place-items: center;
+  width: 95%;
+}
+
+.about__table-caption {
+  width: fit-content;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  color: white;
+  background: var(--dark-gray);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.about__table {
+  margin: 2rem 1rem;
+  background: whitesmoke;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid var(--dark-gray);
+  border-radius: var(--border-radius);
+  border-top-left-radius: 0;
+
+  & th {
+    white-space: nowrap;
+  }
+
+  & th:last-child {
+    border-top-right-radius: var(--border-radius);
+  }
+
+  & tbody tr:nth-child(odd) {
+    background-color: white;
+  }
+
+  & tbody tr td:last-child,
+  th:last-child {
+    text-align: center;
+  }
+
+  & tr:last-child {
+    & td:first-child {
+      border-bottom-left-radius: var(--border-radius);
+    }
+
+    & td:last-child {
+      border-bottom-right-radius: var(--border-radius);
+    }
+  }
+
+  & th {
+    font-size: 1.5rem;
+    text-align: left;
+    padding: 1rem;
+  }
+
+  & td {
+    font-size: 1.25rem;
+    padding: 1rem;
+  }
+
+  & .check-mark {
+    font-size: 2rem;
+    padding: 0;
+    color: var(--green);
+  }
+}
+
+/* Tablets & small laptops */
+@media only screen and (max-width: 1199px) {
+  .about__table-wrapper {
+    place-items: start;
+    overflow-x: auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .about__table-caption {
+    background: white;
+    color: var(--dark-gray);
+  }
+
+  .about__table {
+    border: 2px solid whitesmoke;
+    box-shadow: none;
+
+    & thead {
+      background-color: var(--dark-black);
+    }
+
+    & tbody tr:nth-child(even) {
+      background-color: var(--dark-black);
+    }
+
+    & tbody tr:nth-child(odd) {
+      background-color: var(--dark-gray);
+    }
+  }
+}

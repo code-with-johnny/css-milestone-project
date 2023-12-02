@@ -1,0 +1,57 @@
+@import url("./index.css");
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  width: inherit;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  & li {
+    width: min(90%, 500px);
+    border: 2px solid lightgray;
+    border-radius: calc(var(--border-radius) / 2);
+
+    & a {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      text-decoration: none;
+      color: unset;
+    }
+
+    & img {
+      border-top-left-radius: calc(var(--border-radius) / 3);
+      border-top-right-radius: calc(var(--border-radius) / 3);
+    }
+
+    & .post-item-info {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    & h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    & p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    & hr {
+      margin: 1rem 0;
+    }
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+}

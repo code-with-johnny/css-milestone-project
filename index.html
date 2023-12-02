@@ -4,25 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Joseph The Cat</title>
+
+    <!-- Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap"
+    />
+
+    <!-- Local stylesheets -->
+    <link rel="stylesheet" href="styles/index.css" type="text/css" />
+    <link rel="stylesheet" href="styles/posts.css" type="text/css" />
   </head>
 
   <body>
-    <div id="top"></div>
-    <header>
-      <div>
-        <h1>Joseph The Cat</h1>
-        <nav>
+    <header class="header">
+      <div class="header__content-wrapper">
+        <div class="header__brand">
+          <img src="./assets/img/joseph-the-cat.webp" alt="Joseph The Cat" />
+          <h1>Joseph The Cat</h1>
+        </div>
+        <nav class="header__nav">
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
             <li><a href="pages/posts.html">Posts</a></li>
           </ul>
         </nav>
       </div>
     </header>
     <main>
-      <section>
-        <div>
+      <section class="cta">
+        <div class="cta__content-wrapper">
           <p>🐾 Join the Feline Fun! 🐾</p>
           <p>
             Sign up for my newsletter to stay in the loop on my latest
@@ -35,17 +47,17 @@
           </form>
         </div>
       </section>
-      <section>
-        <div>
+      <section class="posts">
+        <div class="section-header">
           <h2>Latest Posts</h2>
         </div>
-        <div>
-          <ul>
+        <div class="posts__content-wrapper">
+          <ul class="post-list">
             <li>
               <a href="pages/posts/guide-to-relaxation.html">
                 <img src="./assets/img/cat-asleep.webp" alt="Catnip" />
-                <div>
-                  <div>
+                <div class="post-item-info">
+                  <div class="post-item-excerpt">
                     <h3>
                       The Purr-fect Day: A Cat's Guide to Blissful Relaxation
                     </h3>
@@ -55,7 +67,7 @@
                       relaxation. Today, I'm letting you in on the secrets of...
                     </p>
                   </div>
-                  <div>
+                  <div class="post-item-meta">
                     <hr />
                     <p><strong>Author:</strong> Joseph The Cat</p>
                     <p>
@@ -69,8 +81,8 @@
             <li>
               <a href="pages/posts/cat-nip-health-benefits.html">
                 <img src="./assets/img/catnip.webp" alt="Catnip" />
-                <div>
-                  <div>
+                <div class="post-item-info">
+                  <div class="post-item-excerpt">
                     <h3>5 Suprising Health Benefits Of Catnip</h3>
                     <p>
                       Hey, Cool Cats! Joseph here, your resident white
@@ -79,7 +91,7 @@
                       surprisingly legit health benefits that...
                     </p>
                   </div>
-                  <div>
+                  <div class="post-item-meta">
                     <hr />
                     <p><strong>Author:</strong> Joseph The Cat</p>
                     <p>
@@ -96,8 +108,8 @@
                   src="./assets/img/puppy-eyes.webp"
                   alt="Cat With Puppy Eyes"
                 />
-                <div>
-                  <div>
+                <div class="post-item-info">
+                  <div class="post-item-excerpt">
                     <h3>How To Get More Treats From Your Human</h3>
                     <p>
                       Greetings, Snack Seekers! Joseph, your fluffy connoisseur
@@ -106,7 +118,7 @@
                       it's time for some real talk on how to maximize...
                     </p>
                   </div>
-                  <div>
+                  <div class="post-item-meta">
                     <hr />
                     <p><strong>Author:</strong> Joseph The Cat</p>
                     <p>
@@ -120,113 +132,7 @@
           </ul>
         </div>
       </section>
-      <section id="about">
-        <div>
-          <h2>My Story</h2>
-        </div>
-        <div>
-          <div>
-            <p>
-              I'm Joseph, the runt of my litter, born in a small, peaceful town.
-              I was small but had style – I wore cool sunglasses on my fluffy
-              white face.
-            </p>
-            <p>
-              People loved watching me strut down the cobblestone streets with
-              my shades on. I explored the town, made friends, and taught
-              everyone that size doesn't matter; it's your spirit that counts.
-            </p>
-            <p>
-              One summer, I entered a talent competition at the town fair. In
-              the spotlight, I danced gracefully, my sunglasses never slipping.
-              The crowd cheered, and I became a local legend, proving that being
-              small and unique can be a powerful thing.
-            </p>
-            <p>Down below is some information about me and my siblings.</p>
-          </div>
-          <div>
-            <img src="./assets/img/joseph-the-cat.webp" alt="Joseph The Cat" />
-          </div>
-        </div>
-        <div>
-          <table border="1">
-            <caption>
-              Me vs. my siblings
-            </caption>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Weight</th>
-                <th>Fur color</th>
-                <th>Favorite food</th>
-                <th>Wears cool sunglasses</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Joseph</td>
-                <td>4</td>
-                <td>15lbs</td>
-                <td>White</td>
-                <td>Salmon</td>
-                <td>&#x2714;</td>
-              </tr>
-              <tr>
-                <td>Angela</td>
-                <td>4</td>
-                <td>12lbs</td>
-                <td>Black & white</td>
-                <td>Chicken</td>
-                <td>&#10060;</td>
-              </tr>
-              <tr>
-                <td>Ralph</td>
-                <td>4</td>
-                <td>22lbs</td>
-                <td>Orange</td>
-                <td>Donuts</td>
-                <td>&#10060;</td>
-              </tr>
-              <tr>
-                <td>Samantha</td>
-                <td>4</td>
-                <td>11lbs</td>
-                <td>Brown</td>
-                <td>Chicken</td>
-                <td>&#10060;</td>
-              </tr>
-              <tr>
-                <td>Donald</td>
-                <td>4</td>
-                <td>17lbs</td>
-                <td>Orange & black</td>
-                <td>Tuna</td>
-                <td>&#10060;</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-      <section id="contact">
-        <div>
-          <h2>Contact Me</h2>
-        </div>
-        <div>
-          <p>
-            If you want to contact me, fill out the form below. Please keep in
-            mind I only respond to catnip offers.
-          </p>
-          <form>
-            <input name="name" type="text" placeholder="Name" required />
-            <input name="email" type="email" placeholder="Email" required />
-            <textarea name="message" placeholder="Message" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
-      </section>
-      <a href="#top">Back To Top</a>
     </main>
-    <footer>© Copyright - All rights reserved.</footer>
+    <footer class="footer">© Copyright - All rights reserved.</footer>
   </body>
 </html>
