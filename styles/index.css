@@ -5,9 +5,12 @@
   --dark-green: #1d9e5b;
   --blue: #20719a;
   --border-radius: 10px;
-  --nav-height: 60px;
-  --nav-vertical-padding: 0.5rem;
-  --total-nav-height: calc(var(--nav-height) + 2 * var(--nav-vertical-padding));
+  --header-height: 60px;
+  --header-vertical-padding: 0.5rem;
+  --total-header-height: calc(
+    var(--header-height) + 2 * var(--header-vertical-padding)
+  );
+  --header-stacked-height: 168px;
   --max-width: 1800px;
   --content-max-width: 1200px;
   --section-header-height: 120px;
@@ -17,9 +20,11 @@
   color-scheme: light dark;
   color: var(--dark-gray);
   background: white;
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
 }
 
+/* || GENERAL STYLES */
 body {
   display: flex;
   flex-direction: column;
@@ -33,10 +38,14 @@ main {
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
+  margin-top: var(--total-header-height);
   width: 100%;
 }
 
 section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: inherit;
 }
 
@@ -54,15 +63,17 @@ p {
   line-height: 1.5;
 }
 
-input {
+input,
+textarea {
   font-size: 1.25rem;
   background: white;
 }
 
 input,
-button {
+button,
+textarea {
   border: none;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   border-radius: calc(var(--border-radius) / 2);
 }
 
@@ -74,12 +85,17 @@ button {
   color: white;
 }
 
+/* || HEADER */
 .header {
   display: flex;
   justify-content: center;
-  height: var(--nav-height);
-  padding: 0.5rem 1rem;
+  position: fixed;
+  z-index: 1;
+  height: var(--header-height);
+  width: inherit;
+  padding: var(--header-vertical-padding) 1rem;
   background: whitesmoke;
+  box-shadow: 0px -1px 10px var(--dark-gray);
 }
 
 .header__content-wrapper {
@@ -127,12 +143,13 @@ button {
   }
 }
 
+/* || CTA */
 .cta {
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(to right, var(--blue) 30%, var(--green));
-  padding-bottom: 1rem;
+  padding: 1rem 0;
 }
 
 .cta__content-wrapper {
@@ -157,9 +174,9 @@ button {
 
   & form {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.25rem;
     width: fit-content;
-    padding: 0.5rem;
+    padding: 0.25rem;
     background: #3a4a5f;
     border-radius: calc(var(--border-radius) / 2);
 
@@ -171,6 +188,10 @@ button {
     & input,
     button {
       height: 50px;
+    }
+
+    & button {
+      min-width: 200px;
     }
 
     & button:hover {
@@ -194,6 +215,7 @@ button {
   }
 }
 
+/* || POSTS */
 .posts {
   display: flex;
   flex-direction: column;
@@ -204,28 +226,180 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: min(90%, var(--max-width));
+  width: min(100%, var(--max-width));
   padding: 2rem;
+}
+
+/* || ABOUT */
+.about__content {
+  padding: 2rem 0;
+  width: Min(100%, var(--content-max-width));
+
+  & p {
+    padding: 0 1rem;
+  }
+}
+
+.about__bio-wrapper {
+  display: flex;
+
+  /* TODO: fix width of img */
+}
+
+.about__table-wrapper {
+  width: 95%;
+}
+
+.about__table-caption {
+  width: fit-content;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  color: white;
+  background: var(--dark-gray);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.about__table {
+  margin: 2rem 1rem;
+  background: whitesmoke;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid var(--dark-gray);
+  border-radius: var(--border-radius);
+  border-top-left-radius: 0;
+
+  & th {
+    white-space: nowrap;
+  }
+
+  & th:last-child {
+    border-top-right-radius: var(--border-radius);
+  }
+
+  & tbody tr:nth-child(odd) {
+    background-color: white;
+  }
+
+  & tbody tr td:last-child,
+  th:last-child {
+    text-align: center;
+  }
+
+  & tr:last-child {
+    & td:first-child {
+      border-bottom-left-radius: var(--border-radius);
+    }
+
+    & td:last-child {
+      border-bottom-right-radius: var(--border-radius);
+    }
+  }
+
+  & th {
+    font-size: 1.5rem;
+    text-align: left;
+    padding: 1rem;
+  }
+
+  & td {
+    font-size: 1.25rem;
+    padding: 1rem;
+  }
+
+  & .check-mark {
+    font-size: 2rem;
+    padding: 0;
+    color: var(--green);
+  }
+}
+
+/* || CONTACT */
+.contact {
+  width: inherit;
+  display: grid;
+  place-items: center;
+}
+
+.contact__content {
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+  max-width: var(--content-max-width);
+
+  & p {
+    text-align: justify;
+  }
+}
+
+.contact__form {
+  display: grid;
+  place-items: center;
+  row-gap: 1rem;
+  padding: 2rem 0;
+  width: Min(90%, 700px);
+
+  & input,
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    border: 2px solid lightgray;
+  }
+
+  & textarea {
+    min-height: 200px;
+    padding: 1rem;
+    font-family: Montserrat;
+  }
+
+  & button {
+    height: 60px;
+    width: 100%;
+    align-self: center;
+
+    &:hover {
+      background: var(--dark-green);
+    }
+  }
+}
+
+.back-to-top {
+  background: whitesmoke;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: calc(var(--border-radius) / 2);
+  cursor: pointer;
+  font-weight: 500;
+
+  & a {
+    all: unset;
+  }
+
+  &:hover {
+    color: white;
+    background: var(--green);
+  }
 }
 
 .footer {
   display: grid;
   place-content: center;
-  min-height: var(--nav-height);
+  min-height: var(--header-height);
   width: inherit;
   text-align: center;
   font-size: 1.25rem;
   background-color: whitesmoke;
 }
 
-/* Tablets & small laptops */
+/* || MEDIA QUERIES */
 @media only screen and (max-width: 1199px) {
-}
-
-/* Mobile */
-@media only screen and (max-width: 599px) {
   .header {
-    height: fit-content;
+    height: var(--header-stacked-height);
+    padding: 0;
+    padding-top: 1rem;
   }
 
   .header__content-wrapper,
@@ -233,6 +407,29 @@ button {
     flex-direction: column;
   }
 
+  .header__brand {
+    gap: 0.5rem;
+  }
+
+  .header__nav {
+    padding: 0;
+
+    & a {
+      padding: 0.5rem;
+    }
+  }
+
+  main {
+    margin-top: calc(var(--header-stacked-height) + 1rem);
+  }
+
+  .about__table-wrapper {
+    overflow-x: auto;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 599px) {
   .cta__content-wrapper {
     & form {
       flex-direction: column;
@@ -265,6 +462,28 @@ button {
   .cta__copywrite-and-form {
     & input {
       background: white;
+    }
+  }
+
+  .about__table-caption {
+    background: white;
+    color: var(--dark-gray);
+  }
+
+  .about__table {
+    border: 2px solid whitesmoke;
+    box-shadow: none;
+
+    & thead {
+      background-color: var(--dark-black);
+    }
+
+    & tbody tr:nth-child(even) {
+      background-color: var(--dark-black);
+    }
+
+    & tbody tr:nth-child(odd) {
+      background-color: var(--dark-gray);
     }
   }
 
