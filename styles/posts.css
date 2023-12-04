@@ -1,5 +1,58 @@
 @import url("./index.css");
 
+.header--posts,
+.main--posts {
+  width: min(100%, var(--max-width));
+}
+
+.header--posts__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+.main--posts {
+  margin-top: 0;
+}
+
+.post {
+  width: min(95%, var(--content-max-width));
+
+  & img {
+    width: min(95%, 600px);
+    border-radius: calc(var(--border-radius) / 2);
+  }
+
+  & h2 {
+    text-align: center;
+  }
+
+  & li {
+    font-size: 1.5rem;
+  }
+
+  & h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+}
+
+.signoff {
+  align-self: start;
+  font-size: 1.25rem;
+  padding: 1rem 0;
+}
+
 .post-list {
   display: flex;
   flex-wrap: wrap;
